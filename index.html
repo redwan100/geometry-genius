@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ============= TAILWIND CSS LINK ==========  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- ============  ICON CDN LINK ============== -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <title>Geometry-genius</title>
+  </head>
+  <body>
+    <!-- ============ HEADER =========== -->
+    <header class="w-full">
+      <nav
+        class="container mx-auto bg-[#1090d81a] px-3 py-[5px] shadow-md shadow-[#1090d81a] w-full md:w-[90%] flex justify-between items-center"
+      >
+        <div>
+          <p class="font-bold text-xl text-[#111111cc] md:text-2xl">
+            Interactive
+          </p>
+          <p>Geometry Genius</p>
+        </div>
+
+        <div>
+          <button
+            id="blog-btn"
+            class="py-1 px-4 bg-blue-600 text-xl text-white font-semibold rounded-md uppercase shadow-md"
+          >
+            blog
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ================== MAIN ============ -->
+    <main>
+      <section class="py-5 w-full">
+        <div class="container mx-auto w-[90%]">
+            <!-- ====left==== -->
+          <div class="grid gap-4 md:grid-cols-[3fr_1fr] justify-center">
+           <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center items-center">
+             <!-- item1 -->
+            <div id="card" class="shadow-md p-8 md:w-full space-y-8">
+              <img class="max-w-full mx-auto" src="./images/triangle.png" alt="" />
+              <h1 id="triangle-title" class="text-3xl font-semibold text-center">Triangle</h1>
+              <!-- ==== FORMULA ====  -->
+              <div class="text-center">
+                <p class="text-lg flex items-center justify-center gap-4">Area (A) = 0.5 x b x h 
+                  
+                </p>
+                <!-- ========== input value set div ======= -->
+                <p class="text-lg flex items-center justify-center gap-4">
+                  <span>
+                    b = <span id="triangle-value1">0</span>cm h=<span id="triangle-value2">0</span>cm 
+                  </span>
+                <i id="triangle-edit" class="ri-edit-box-line text-emerald-400 cursor-pointer hover:text-emerald-700"></i>
+                </p>
+              </div>
+
+
+              <div>
+                <div id="input-box" class="flex flex-col md:flex-row gap-6 justify-center items-center ">
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="triangle-input1" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="b"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="triangle-input2" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="h"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                 
+                </div>
+
+                 <!-- ========= checkbox ========= -->
+                  <p class="mt-2 capitalize font-semibold mx-auto w-max">
+                    <input class="checked:outline checked:outline-emerald-400" type="checkbox" name="" id="triangle-checkbox"> updated
+                  </p>
+
+                  <!-- =========== ERROR ========== -->
+                <p class="text-center mt-1 text-rose-600 font-semibold text-sm" id="error"></p>
+            </div>
+            <button id="calculate-btn" class="w-full bg-teal-600 text-lg text-green-100 font-bold py-1 rounded-md transition hover:bg-teal-700">Calculate</button>
+            </div>
+
+
+            
+             <!-- item 2 -->
+            <div id="card" class="shadow-md p-8 md:w-full space-y-8">
+              <img class="max-w-full mx-auto" src="./images/rectangle.png" alt="" />
+              <h1 id="rectangle-title" class="text-3xl font-semibold text-center">Rectangle</h1>
+
+              <!-- ============ FORMULA ========== -->
+              <p class="text-lg flex items-center justify-center gap-4">
+                Area (A) =  w x l             
+                </p>
+              <!-- ========== input value set div ======= -->
+                <p class="text-lg flex items-center justify-center gap-4">
+                  <span>
+                    b = <span id="rectangle-value1">0</span>cm h=<span id="rectangle-value2">0</span>cm 
+                  </span>
+                  <!-- ==== edit icon ==== -->
+                <i id="rectange-edit" class="ri-edit-box-line text-emerald-400 cursor-pointer hover:text-emerald-700"></i>
+                </p>
+              <div>
+                <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="rectangle-input1" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="w"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="rectangle-input2" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="l"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                </div>
+
+                 <!-- ========= checkbox ========= -->
+                  <p class="mt-2 capitalize font-semibold mx-auto w-max">
+                    <input class="checked:outline checked:outline-emerald-400" type="checkbox" name="" id="rectangle-checkbox"> updated
+                  </p>
+
+                <p class="mt-1 text-rose-600 font-semibold text-center text-sm" id="rect-error"></p>
+            </div>
+            <button id="calculate-btn" class="w-full bg-teal-600 text-lg text-green-100 font-bold py-1 rounded-md transition hover:bg-teal-700">Calculate</button>
+            </div>
+
+
+             <!-- item 3 -->
+            <div id="card" class="shadow-md p-8 md:w-full space-y-8">
+              <img class="max-w-full mx-auto" src="./images/parallelogram.png" alt="" />
+              <h1 id="parall-title" class="text-3xl font-semibold text-center">Parallelogram</h1>
+
+               <!-- ============ FORMULA ========== -->
+              <p class="text-lg flex items-center justify-center gap-4">
+                Area (A) = b x h               
+                </p>
+              <!-- ========== input value set div ======= -->
+                <p class="text-lg flex items-center justify-center gap-4">
+                  <span>
+                    b = <span id="parall-value1">0</span>cm h=<span id="parall-value2">0</span>cm 
+                  </span>
+                  <!-- ===== edit icon ======= -->
+                <i id="parall-edit" class="ri-edit-box-line text-emerald-400 cursor-pointer hover:text-emerald-700"></i>
+                </p>
+
+              <div>
+                <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="parall-input1" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="b"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="parall-input2" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="h"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                </div>
+
+                <!-- ========= checkbox ========= -->
+                  <p class="mt-2 capitalize font-semibold mx-auto w-max">
+                    <input class="checked:outline checked:outline-emerald-400" type="checkbox" name="" id="parall-checkbox"> updated
+                  </p>
+
+                <!-- === ERROR === -->
+                <p class="mt-1 text-rose-600 font-semibold text-center text-sm" id="parall-error"></p>
+            </div>
+            <button id="calculate-btn" class="w-full bg-teal-600 text-lg text-green-100 font-bold py-1 rounded-md transition hover:bg-teal-700">Calculate</button>
+            </div>
+
+
+             <!-- item  4 -->
+            <div id="card" class="shadow-md p-8 md:w-full space-y-8">
+              <img class="max-w-full mx-auto" src="./images/rhombus.png" alt="" />
+              <h1 id="rhombus-title" class="text-3xl font-semibold text-center">Rhombus</h1>
+
+               <!-- ============ FORMULA ========== -->
+              <p class="text-lg flex items-center justify-center gap-4">
+                Area (A) = 0.5 x d1 x d2    
+                </p>
+
+                <!-- ========== input value set div ======= -->
+                <p class="text-lg flex items-center justify-center gap-4">
+                  <span>
+                    b = <span id="rhombus-value1">0</span>cm h=<span id="rhombus-value2">0</span>cm 
+                  </span>
+
+                  <!-- ======= edit icon ========= -->
+                <i id="rhombus-edit" class="ri-edit-box-line text-emerald-400 cursor-pointer hover:text-emerald-700"></i>
+                </p>
+
+
+              <div>
+                <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="rhombus-input1" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="d1"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="rhombus-input2" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="d2"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                </div>
+
+                 <!-- ========= checkbox ========= -->
+                  <p class="mt-2 capitalize font-semibold mx-auto w-max">
+                    <input class="checked:outline checked:outline-emerald-400" type="checkbox" name="" id="rhombus-checkbox"> updated
+                  </p>
+
+                <!-- === ERROR === -->
+                <p class="mt-1 text-rose-600 font-semibold text-center text-sm" id="rhombus-error"></p>
+            </div>
+            <button id="calculate-btn" class="w-full bg-teal-600 text-lg text-green-100 font-bold py-1 rounded-md transition hover:bg-teal-700">Calculate</button>
+            </div>
+
+
+             <!-- item 5 -->
+            <div id="card" class="shadow-md p-8 md:w-full space-y-8">
+              <img class="max-w-full mx-auto" src="./images/pentagon.png" alt="" />
+              <h1 id="pentagon-title" class="text-3xl font-semibold text-center">Pentagon</h1>
+
+               <!-- ============ FORMULA ========== -->
+              <p class="text-lg flex items-center justify-center gap-4">
+                Area (A) = 0.5 x p x b               
+                </p>
+
+                <!-- ========== input value set div ======= -->
+                <p class="text-lg flex items-center justify-center gap-4">
+                  <span>
+                    b = <span id="pentagon-value1">0</span>cm h=<span id="pentagon-value2">0</span>cm 
+                  </span>
+
+                  <!-- =========== edit icon ============= -->
+                <i id="pentagon-edit" class="ri-edit-box-line text-emerald-400 cursor-pointer hover:text-emerald-700"></i>
+                </p>
+
+
+              <div>
+                <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="pentagon-input1" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="p"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="pentagon-input2" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="b"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                </div>
+
+                <!-- ========= checkbox ========= -->
+                  <p class="mt-2 capitalize font-semibold mx-auto w-max">
+                    <input class="checked:outline checked:outline-emerald-400" type="checkbox" name="" id="pentagon-checkbox"> updated
+                  </p>
+
+                <!-- ========= ERROR ======== -->
+                <p class="mt-1 text-rose-600 font-semibold text-center text-sm" id="pentagon-error"></p>
+            </div>
+            <button id="calculate-btn" class="w-full bg-teal-600 text-lg text-green-100 font-bold py-1 rounded-md transition hover:bg-teal-700">Calculate</button>
+            </div>
+
+
+             <!-- item 6 -->
+            <div id="card" class="shadow-md p-8 md:w-full space-y-8">
+              <img class="max-w-full mx-auto" src="./images/ellipse.png" alt="" />
+              <h1 id="ellipse-title" class="text-3xl font-semibold text-center">Ellipse</h1>
+
+               <!-- ============ FORMULA ========== -->
+              <p class="text-lg flex items-center justify-center gap-4">
+                Area (A) = ab             
+                </p>
+
+                <!-- ========== input value set div ======= -->
+                <p class="text-lg flex items-center justify-center gap-4">
+                  <span>
+                    b = <span id="ellipse-value1">0</span>cm h=<span id="ellipse-value2">0</span>cm 
+                  </span>
+
+
+                  <!-- ========= edit icon======= -->
+                <i id="ellipse-edit" class="ri-edit-box-line text-emerald-400 cursor-pointer hover:text-emerald-700"></i>
+                </p>
+
+                 
+              <div>
+                <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="ellipse-input1" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="a"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                  <div class="basis-[40%] flex gap-2 items-center">
+                      <input id="ellipse-input2" class="bg-slate-200 outline-none py-[2px] px-2 rounded-md w-full" type="text" placeholder="b"/>
+                      <label class="font-semibold" for="">cm</label>
+                  </div>
+                </div>
+
+                <!-- ========= checkbox ========= -->
+                  <p class="mt-2 capitalize font-semibold mx-auto w-max">
+                    <input class="checked:outline checked:outline-emerald-400" type="checkbox" name="" id="ellipse-checkbox"> updated
+                  </p>
+
+                <!-- ======= ERROR ====== -->
+                <p class="mt-1 text-rose-600 font-semibold text-center text-sm" id="ellipse-error"></p>
+            </div>
+            <button id="calculate-btn" class="w-full bg-teal-600 text-lg text-green-100 font-bold py-1 rounded-md transition hover:bg-teal-700">Calculate</button>
+            </div>
+
+
+
+           </div>
+
+           <!-- =========== CALCULATE SIDE =============== -->
+            <!-- ====right==== -->
+            <div class=" py-6 md:py-0 shadow-lg">
+                <div class="p-1 mx-auto block w-fit">
+                  <h1 class="text-center text-2xl font-semibold mb-4 border-b-2">Area Calculation</h1>
+                    <div id="aria-item">
+                      <!-- <p class="text-lg">
+                        1. Triangle 12cm<sup class="font-bold">2</sup> <button class="bg-green-600 py-1 px-2 rounded-sm text-slate-100">Convert to m<sup>2</sup></button>
+                    </p> -->
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--================ js link =============== -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>
